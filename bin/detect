@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+
+# exit early if app is not Django
+if [ ! -f $BUILD_DIR/requirements.txt ] && [ ! -f $BUILD_DIR/manage.py ]; then
+    exit 1
+fi
+
+echo Django framework
