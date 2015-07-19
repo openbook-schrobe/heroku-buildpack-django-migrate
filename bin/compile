@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# fail fast and fail hard
+set -eo pipefail
+
+BUILD_DIR=$1
+
+echo "-----> Running Django migrations"
+python $BUILD_DIR/manage.py migrate
