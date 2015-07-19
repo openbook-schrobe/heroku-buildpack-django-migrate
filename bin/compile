@@ -6,6 +6,7 @@ set -eo pipefail
 BUILD_DIR=$1
 PYTHON_EXE=$BUILD_DIR/.heroku/python/bin/python
 
+# copied from Heroku python buildpack
 sub-env() {
 
   WHITELIST=${2:-''}
