@@ -8,7 +8,8 @@ PYTHON_EXE="/app/.heroku/python/bin/python"
 
 
 echo "-----> Debugging:"
-ls -al $BUILD_DIR
+ls -al $BUILD_DIR/.heroku/
+ls -al /app/.heroku/
 
 
 echo "-----> Running Django migrations"
