@@ -1,2 +1,3 @@
-# heroku-buildpack-django-migrate
-Heroku buildpack to run Django migrations
+# Heroku Buildpack Django Migrate
+
+Heroku buildpack to run Django migrations.
