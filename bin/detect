@@ -2,11 +2,6 @@
 
 BUILD_DIR=$1
 
-echo "-----> Build dir contains:"
-ls -l $BUILD_DIR
-echo "-----> App dir contains:"
-ls -l /app
-
 # exit early if app is not Django
 if [ ! -f $BUILD_DIR/requirements.txt ] && [ ! -f $BUILD_DIR/manage.py ]; then
     exit 1
