@@ -6,5 +6,24 @@ set -eo pipefail
 BUILD_DIR=$1
 PYTHON_EXE=$BUILD_DIR/.heroku/python/bin/python
 
+sub-env() {
+
+  WHITELIST=${2:-''}
+  BLACKLIST=${3:-'^(GIT_DIR|PYTHONHOME|LD_LIBRARY_PATH|LIBRARY_PATH|PATH)$'}
+
+  (
+    if [ -d "$ENV_DIR" ]; then
+      for e in $(ls $ENV_DIR); do
+        echo "$e" | grep -E "$WHITELIST" | grep -qvE "$BLACKLIST" &&
+        export "$e=$(cat $ENV_DIR/$e)"
+        :
+      done
+    fi
+
+    $1
+
+  )
+}
+
 echo "-----> Running Django migrations"
-$PYTHON_EXE $BUILD_DIR/manage.py migrate
+sub-env $PYTHON_EXE $BUILD_DIR/manage.py migrate
