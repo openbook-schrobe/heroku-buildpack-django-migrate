@@ -7,4 +7,4 @@ if [ ! -f $BUILD_DIR/requirements.txt ] && [ ! -f $BUILD_DIR/manage.py ]; then
     exit 1
 fi
 
-echo Django
+echo "Django"
