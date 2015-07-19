@@ -2,8 +2,14 @@
 
 BUILD_DIR=$1
 
-echo "-----> /app/bin directory:"
-ls -l /app/bin
+echo "-----> /app directory:"
+ls -l /app
+echo "-----> /app/vendor directory:"
+ls -l /app/vendor
+
+echo "-----> .heroku directory:"
+ls -l .heroku/
+
 
 # exit early if app is not Django
 if [ ! -f $BUILD_DIR/requirements.txt ] && [ ! -f $BUILD_DIR/manage.py ]; then
