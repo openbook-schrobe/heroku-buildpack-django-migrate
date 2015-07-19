@@ -4,12 +4,7 @@
 set -eo pipefail
 
 BUILD_DIR=$1
-PYTHON_EXE="/app/.heroku/python/bin/python"
-
-
-echo "-----> Debugging:"
-ls -al $BUILD_DIR/.heroku/python/bin/
-
+PYTHON_EXE=$BUILD_DIR/.heroku/python/bin/python
 
 echo "-----> Running Django migrations"
 $PYTHON_EXE $BUILD_DIR/manage.py migrate
