@@ -33,5 +33,4 @@ echo '=====> '$BUILD_DIR
 cd $BUILD_DIR/$DJANGO_DIR && ls -larth
 echo '----'
 
-# sub-env &&
-$PYTHON_EXE $BUILD_DIR/$DJANGO_DIR/manage.py migrate
+sub-env && $PYTHON_EXE $BUILD_DIR/$DJANGO_DIR/manage.py migrate
