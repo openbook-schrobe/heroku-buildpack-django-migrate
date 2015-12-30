@@ -29,6 +29,8 @@ sub-env() {
 echo "-----> Running Django migrations"
 echo '----'
 echo '=====> '$BUILD_DIR
+cat $BUILD_DIR && pwd
+cat $BUILD_DIR && ls -larth
 echo '----'
 
 sub-env $PYTHON_EXE $BUILD_DIR/manage.py migrate
