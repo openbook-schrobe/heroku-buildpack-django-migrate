@@ -5,6 +5,7 @@ set -eo pipefail
 
 BUILD_DIR=$1
 PYTHON_EXE=$BUILD_DIR/.heroku/python/bin/python
+DJANGO_DIR='openbook'
 
 # copied from Heroku python buildpack
 sub-env() {
@@ -29,8 +30,7 @@ sub-env() {
 echo "-----> Running Django migrations"
 echo '----'
 echo '=====> '$BUILD_DIR
-cd $BUILD_DIR && pwd
-cd $BUILD_DIR && ls -larth
+cd $BUILD_DIR/$DJANGO_DIR && ls -larth
 echo '----'
 
-sub-env $PYTHON_EXE $BUILD_DIR/manage.py migrate
+sub-env $PYTHON_EXE $BUILD_DIR/$DJANGO_DIR/manage.py migrate
