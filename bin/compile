@@ -31,6 +31,10 @@ echo "-----> Running Django migrations"
 echo '----'
 echo '=====> '$BUILD_DIR
 cd $BUILD_DIR/$DJANGO_DIR && ls -larth
+echo $DATABASE_URL
+sub-env && echo $DATABASE_URL
+ls -larth $ENV_DIR
+cat $ENV_DIR
 echo '----'
 
 sub-env && echo $DATABASE_URL && $PYTHON_EXE $BUILD_DIR/$DJANGO_DIR/manage.py migrate
